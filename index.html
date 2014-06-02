@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="myApp" >
+<head>
+  <meta charset="utf-8">
+  <title>SoundSkate</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="http://code.angularjs.org/1.1.4/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+	<div class="jumbotron">
+		<div class="container">
+			<center>
+				<img src="img/logo.png" alt="SoundSkate logo" height="100" width="120"> 
+				<h1>SoundSkate</h1>
+			</center><br>
+			<center>
+				<iframe src="https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:5Z7ygHQo02SUrFmcgpwsKW,1x6ACsKV4UdWS2FMuPFUiT,4bi73jCM02fMpkI11Lqmfe,0mWiuXuLAJ3Brin3Or2x6v" frameborder="0" allowtransparency="true"></iframe>
+			</center>
+			<h3>PlayerList</h3>
+			<table class='table table-striped'>
+					<tr>
+						<th>
+							<h4>#</h4>
+						</th>	
+						<th>
+							<h4>Song Name</h4>
+						</th>		
+						<th>
+							<h4>Artists</h4>
+						</th>
+						<th>
+							<h4>Time</h4>
+						</th>
+		        	</tr>
+
+					<tr ng-repeat= "player in result">
+						<td><a ng-href="https://www.google.com/search?q={{player.PlayerName}}" target="_blank"> {{player.Music}}</a></td>
+						<td>{{player.ID}}</td>
+						<td>{{player.Music}}</td>
+						<!-- <td>{{player.TPP}}</td>
+						<td>{{player.FTP}}</td>
+						<td>{{player.PPG}}</td> -->
+					</tr>
+
+			</table>
+			<form class="form"> 
+			    <div class="input-append">
+			      <input type="text" ng-model="search.$" class="form-control" placeholder="Search for Music...">
+			    </div><br>			
+		    </form>
+		</div>
+
+	</div>
+	
+<!-- 	<div ng-controller="myApp">
+		<p>The ID is {{greeting.id}}</p>
+		<p>The content is {{greeting.content}}</p>
+	</div> -->
+
+</body>
+
+
+
+</html>
