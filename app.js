@@ -7,7 +7,7 @@ app.factory('myService', function($http) {
     async: function() {
       if ( !promise ) {
         promise = $http.get('search.php').then(function (response) {
-          console.log(response);
+          //console.log(response);
           return response.data;
         });
       }
@@ -18,20 +18,20 @@ app.factory('myService', function($http) {
   return myService;
 });
 
-//the Json datas are inserted in result
-app.controller('MainCtrl', function( myService,$scope) {
-   myService.async().then(function(d) {
-    $scope.result = d;
-    alert("dsadp");
-  });
-});
+// //the Json datas are inserted in result
+// app.controller('MainCtrl', function( myService, $scope) {
+//    myService.async().then(function(d) {
+//     $scope.result = d;
+//     alert("dsadp");
+//   });
+// });
 
-app.controller('Hello', function Hello($scope, $http) {
+// app.controller('Hello', function Hello($scope, $http) {
   
-    $http.get('http://rest-service.guides.spring.io/greeting').
-        success(function(data) {
-            $scope.greeting = data;
-        });
-});
+//     $http.get('http://rest-service.guides.spring.io/greeting').
+//         success(function(data) {
+//             $scope.greeting = data;
+//         });
+// });
 
 

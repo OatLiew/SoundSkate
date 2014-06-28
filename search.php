@@ -16,9 +16,10 @@ try {
         $arr[] = $row;
       } 
     }
+    
     //convert the number type from text to number and encode in Json format
     echo(json_encode($arr,JSON_NUMERIC_CHECK));
-    
+
   } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
   }
