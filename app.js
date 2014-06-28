@@ -18,28 +18,10 @@ app.factory('myService', function($http) {
   return myService;
 });
 
-// //the Json datas are inserted in result
-// app.controller('MainCtrl', function( myService, $scope) {
-//    myService.async().then(function(d) {
-//     $scope.result = d;
-//     alert("dsadp");
-//   });
-// });
-
 //the Json datas are inserted in result
 app.controller('MainCtrl', function( myService,$scope) {
    myService.async().then(function(d) {
     $scope.result = d;
   });
 });
-
-
-// app.controller('MainCtrl', function Hello($scope, $http) {
-  
-//     $http.get('http://rest-service.guides.spring.io/greeting').
-//         success(function(data) {
-//             $scope.greeting = data;
-//         });
-// });
-
 
