@@ -5,7 +5,9 @@ try {
   'infor344user', 
   'password');
   
-  $stmt = $conn->prepare('SELECT * FROM SoundSkate');
+  //SELECT * FROM NBAplayers
+  //SELECT * FROM SoundSkate
+  $stmt = $conn->prepare('SELECT * FROM NBAplayers');
   $stmt->execute();
 
   $result = $stmt->fetchAll();
@@ -16,7 +18,7 @@ try {
         $arr[] = $row;
       } 
     }
-    
+
     //convert the number type from text to number and encode in Json format
     echo(json_encode($arr,JSON_NUMERIC_CHECK));
 
